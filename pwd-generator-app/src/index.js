@@ -1,3 +1,4 @@
+// const electron = require("electron");
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
@@ -50,7 +51,7 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
-ipcMain.on('generatePassword', (event, data) => {
+ipcMain.on("generatePassword", (event, data) => {
   const randomPassword = Math.random().toString(36).substr(2, 5)
   window.webContents.send('recievePassword', randomPassword)
 })
